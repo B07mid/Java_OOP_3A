@@ -1,10 +1,10 @@
 package gestionzoo.entite;
-public class Animal
+sealed public class Animal permits Aquatic,Terrestrial 
 {
-    private String family ;
-    private String name ;
-    private int age ;
-    private boolean ismammal ;
+    protected String family ;
+    protected String name ;
+    protected int age ;
+    protected boolean ismammal ;
 
     public Animal(){};
     public Animal(String family, String name, int age, boolean ismammal)
@@ -15,6 +15,7 @@ public class Animal
         this.ismammal = ismammal ;
     }
 
+    @Override
     public String toString()
     {
         return "Animal Name: " + this.name + ", Family: " + this.family + ", Age: " + this.age + ", Is Mammal: " + this.ismammal;

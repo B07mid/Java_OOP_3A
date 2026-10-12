@@ -1,14 +1,43 @@
 package gestionzoo.main;
+import gestionzoo.entite.*;
 import java.util.Scanner;
-
-import gestionzoo.entite.Animal;
-import gestionzoo.entite.Zoo;
 
 public class ZooManagement {
 
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        // Instruction 21 : Constructeurs par defaut
+        Aquatic aquaticDefault = new Aquatic();
+        Terrestrial terrestrialDefault = new Terrestrial();
+        Dauphin dolphinDefault = new Dauphin();
+        Pingouin penguinDefault = new Pingouin();
+        System.out.println("========== PROSIT 5 : DEFAULT CONSTRUCTORS ==========");
+        System.out.println(aquaticDefault);
+        System.out.println(terrestrialDefault);
+        System.out.println(dolphinDefault);
+        System.out.println(penguinDefault);
+        System.out.println();
+
+        // Instruction 22 : Constructeurs parametres
+        Aquatic aquatic = new Aquatic("Fish", "Shark", 3, false, "Ocean");
+        Terrestrial terrestrial = new Terrestrial("Mammal", "Dog", 4, true, 4);
+        Dauphin dolphin = new Dauphin("Delphinidae", "Flipper", 6, true, "Sea", 32.5f);
+        Pingouin penguin = new Pingouin("Spheniscidae", "Kowalski", 2, false, "Iceberg", 50.0f);
+
+        // Instruction 23 : Redefinition de toString()
+        System.out.println("========== PROSIT 5 : TOSTRING ==========");
+        System.out.println(aquatic);
+        System.out.println(terrestrial);
+        System.out.println(dolphin);
+        System.out.println(penguin);
+
+        // Instruction 24 : Comportement de nage
+        System.out.println("\n========== PROSIT 5 : SWIM ==========");
+        aquatic.swim();
+        dolphin.swim();
+        penguin.swim();
+        System.out.println("=========================================\n");
         String zooName;
         int nbrCages;
 
